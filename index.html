@@ -93,6 +93,39 @@
         .btn:active {
             transform: scale(0.95);
         }
+
+        .footer-link {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            padding: 30px 20px 40px;
+            margin-top: auto;
+        }
+
+        .footer-link a {
+            font-family: 'PingFang SC', 'Microsoft YaHei', system-ui, -apple-system, sans-serif;
+            font-size: 0.95rem;
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: color 0.3s, transform 0.2s;
+            display: inline-block;
+            padding: 8px 16px;
+            border-radius: 20px;
+            background: rgba(255, 255, 255, 0.06);
+            backdrop-filter: blur(4px);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .footer-link a:hover {
+            color: #c4b5fd;
+            background: rgba(124, 58, 237, 0.15);
+            border-color: rgba(124, 58, 237, 0.2);
+            transform: scale(1.03);
+        }
+
+        .footer-link a:active {
+            transform: scale(0.95);
+        }
     </style>
 </head>
 <body>
@@ -102,6 +135,9 @@
         </header>
         <div class="content">
             <a href="server.html" class="btn">了解服务器</a>
+        </div>
+        <div class="footer-link">
+            <a href="https://qun.qq.com/universal-share/share?ac=1&authKey=m29KlxLO4ZIrPw%2B%2B7qoL7%2FHN0Yjdn9tn6LMNVOg8zcxJrs73kq9N8zpe1bp2cvvZ&busi_data=eyJncm91cENvZGUiOiI3NjI3MjA5MzUiLCJ0b2tlbiI6ImpDc3phS2ozVFN0YTBKRDROdnFNTUl6WUdwdnFQazNxaVJhb29HMTlWN1YyeDNjU2l3SzY5RHVoZ1F4ZlEvYVkiLCJ1aW4iOiIzODA1NzA3MTE0In0%3D&data=OAMynHIsWE6VljMeG7iFw8qYbi4Rnq6k9sD2fHO4GQPaLexMerGf-eed70qTvaGDjupr3dkz1DQOXztxRV27OA&svctype=4&tempid=h5_group_info" target="_blank" rel="noopener noreferrer">添加QQ服务器聊天群</a>
         </div>
     </div>
 </body>
