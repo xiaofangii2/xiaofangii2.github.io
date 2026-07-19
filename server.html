@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>了解服务器</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            width: 100%;
+            min-height: 100vh;
+            background: #0a0a0a;
+            font-family: 'PingFang SC', 'Microsoft YaHei', system-ui, -apple-system, sans-serif;
+            color: #ffffff;
+        }
+
+        .page {
+            width: 100%;
+            min-height: 100vh;
+            background: url('背景.jpg') no-repeat center center / cover;
+            background-attachment: fixed;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            padding: 100px 24px 60px;
+        }
+
+        .page::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.35);
+            z-index: 0;
+        }
+
+        .page-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            max-width: 700px;
+            width: 100%;
+        }
+
+        .back-btn {
+            position: fixed;
+            top: 24px;
+            left: 24px;
+            z-index: 20;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 44px;
+            height: 44px;
+            background: rgba(255, 255, 255, 0.12);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            cursor: pointer;
+            text-decoration: none;
+            backdrop-filter: blur(8px);
+            transition: background 0.3s, transform 0.2s;
+            font-size: 1.4rem;
+            color: #ffffff;
+        }
+
+        .back-btn:hover {
+            background: rgba(255, 255, 255, 0.25);
+            transform: scale(1.08);
+        }
+
+        .back-btn:active {
+            transform: scale(0.92);
+        }
+
+        h1 {
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 700;
+            margin-bottom: 16px;
+            text-shadow: 0 2px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        .desc {
+            font-size: 1.05rem;
+            line-height: 1.9;
+            opacity: 0.9;
+            margin-bottom: 6px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 40px;
+            font-family: 'PingFang SC', 'Microsoft YaHei', system-ui, -apple-system, sans-serif;
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: #ffffff;
+            background: #7c3aed;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            box-shadow: 0 4px 20px rgba(124, 58, 237, 0.35);
+            text-decoration: none;
+            transition: transform 0.2s, box-shadow 0.2s;
+            margin-top: 8px;
+        }
+
+        .btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 28px rgba(124, 58, 237, 0.55);
+        }
+
+        .btn:active {
+            transform: scale(0.95);
+        }
+
+        .divider {
+            width: 60px;
+            height: 2px;
+            background: rgba(124, 58, 237, 0.4);
+            margin: 18px auto;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <a href="index.html" class="back-btn">←</a>
+        <div class="page-content">
+            <h1>服务器介绍</h1>
+            <p class="desc">这一个服务器很不稳定，随时都可能会崩服。<br />但是呢，又有很多生存的必须机器。</p>
+
+            <div class="divider"></div>
+
+            <div style="margin-top:10px;">
+                <a href="connect.html" class="btn">如何连接服务器</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

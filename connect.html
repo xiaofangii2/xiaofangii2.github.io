@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>连接服务器</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            width: 100%;
+            min-height: 100vh;
+            background: #0a0a0a;
+            font-family: 'PingFang SC', 'Microsoft YaHei', system-ui, -apple-system, sans-serif;
+            color: #ffffff;
+        }
+
+        .page {
+            width: 100%;
+            min-height: 100vh;
+            background: url('背景.jpg') no-repeat center center / cover;
+            background-attachment: fixed;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            padding: 100px 24px 60px;
+        }
+
+        .page::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.35);
+            z-index: 0;
+        }
+
+        .page-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            max-width: 700px;
+            width: 100%;
+        }
+
+        .back-btn {
+            position: fixed;
+            top: 24px;
+            left: 24px;
+            z-index: 20;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 44px;
+            height: 44px;
+            background: rgba(255, 255, 255, 0.12);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            cursor: pointer;
+            text-decoration: none;
+            backdrop-filter: blur(8px);
+            transition: background 0.3s, transform 0.2s;
+            font-size: 1.4rem;
+            color: #ffffff;
+        }
+
+        .back-btn:hover {
+            background: rgba(255, 255, 255, 0.25);
+            transform: scale(1.08);
+        }
+
+        .back-btn:active {
+            transform: scale(0.92);
+        }
+
+        h1 {
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 700;
+            margin-bottom: 24px;
+            text-shadow: 0 2px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        .section-title {
+            font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+            font-weight: 600;
+            margin-top: 28px;
+            margin-bottom: 10px;
+            color: #c4b5fd;
+            text-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
+        }
+
+        .desc-block {
+            background: rgba(0, 0, 0, 0.35);
+            backdrop-filter: blur(6px);
+            -webkit-backdrop-filter: blur(6px);
+            border-radius: 12px;
+            padding: 20px 24px;
+            margin-top: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .desc-block p {
+            font-size: 0.98rem;
+            line-height: 2;
+            opacity: 0.85;
+            text-align: left;
+        }
+
+        .desc-block .highlight {
+            color: #a78bfa;
+            font-weight: 500;
+            display: block;
+            margin-top: 2px;
+            font-size: 1.05rem;
+            letter-spacing: 0.5px;
+        }
+
+        .divider {
+            width: 60px;
+            height: 2px;
+            background: rgba(124, 58, 237, 0.4);
+            margin: 18px auto;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <a href="server.html" class="back-btn">←</a>
+        <div class="page-content">
+            <h1>连接服务器</h1>
+
+            <div class="section-title" style="font-size:1.2rem; color:#a78bfa;">Java 版</div>
+            <div class="desc-block">
+                <p>
+                    打开 1.20.1 Java 客户端，点击多人游戏，再点继续，再点击添加服务器。<br />
+                    在服务器地址里输入
+                    <span class="highlight">jp-4.qwq.fan:49048</span>
+                    点击完成后进入即可。
+                </p>
+            </div>
+
+            <div class="section-title" style="font-size:1.2rem; margin-top:22px; color:#a78bfa;">基岩版</div>
+            <div class="desc-block">
+                <p>
+                    点击开始游戏，在右边找到服务器，然后再点击创建，添加服务器。<br />
+                    把服务器地址输入进去
+                    <span class="highlight">jp-4.qwq.fan:49047</span>
+                    点击完成后进行游玩<br />
+                    <span style="opacity:0.6; font-size:0.9rem;">(等待时间较长，请耐心等待)</span>
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
