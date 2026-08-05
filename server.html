@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <title>了解服务器</title>
+    <link rel="icon" href="assets/favicon.ico" type="image/x-icon" />
     <style>
         * {
             margin: 0;
@@ -125,6 +126,30 @@
             margin: 18px auto;
             border-radius: 4px;
         }
+
+        .link-group {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+            margin-top: 10px;
+        }
+
+        .link-group .text-link {
+            font-family: 'PingFang SC', 'Microsoft YaHei', system-ui, -apple-system, sans-serif;
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: #c4b5fd;
+            text-decoration: none;
+            border-bottom: 1px solid rgba(196, 181, 253, 0.2);
+            padding-bottom: 2px;
+            transition: color 0.3s, border-color 0.3s;
+        }
+
+        .link-group .text-link:hover {
+            color: #a78bfa;
+            border-color: rgba(196, 181, 253, 0.5);
+        }
     </style>
 </head>
 <body>
@@ -132,12 +157,13 @@
         <a href="index.html" class="back-btn">←</a>
         <div class="page-content">
             <h1>服务器介绍</h1>
-            <p class="desc">这一个服务器很不稳定，随时都可能会崩服。<br />但是呢，又有很多生存的必须机器。</p>
+            <p class="desc">小方小镇虽然服务器不太稳定，随时都可能会崩服，但是小镇里有很多生存的必须机器，值得你来探索和定居。</p>
 
             <div class="divider"></div>
 
-            <div style="margin-top:10px;">
+            <div class="link-group">
                 <a href="connect.html" class="btn">如何连接服务器</a>
+                <a href="https://cdn.modrinth.com/data/jSYfn9oO/versions/4Hq6OPts/%E5%B0%8F%E6%96%B9%E5%B0%8F%E6%96%B9i%E7%9A%84%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%8E%A8%E8%8D%90%E6%95%B4%E5%90%88%E5%8C%85.mrpack?mr_download_reason=standalone&mr_game_version=26.2&mr_loader=fabric" target="_blank" rel="noopener noreferrer" class="text-link">没有整合包？点击下载</a>
             </div>
         </div>
     </div>
