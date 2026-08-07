@@ -87,6 +87,22 @@
             transform: scale(0.85);
         }
 
+        .skip-link {
+            color: rgba(255, 255, 255, 0.25);
+            font-family: 'PingFang SC', 'Microsoft YaHei', system-ui, -apple-system, sans-serif;
+            font-size: 0.75rem;
+            text-decoration: none;
+            transition: color 0.3s;
+            cursor: pointer;
+            display: none;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            padding-bottom: 2px;
+        }
+
+        .skip-link:hover {
+            color: rgba(255, 255, 255, 0.5);
+        }
+
         @media (max-width: 480px) {
             .verify-box {
                 padding: 30px 20px;
@@ -108,11 +124,15 @@
             <div class="verify-sub">请完成下方验证以进入小方小镇官网</div>
             <div class="cf-turnstile" data-sitekey="0x4AAAAAAEHAYONhdqABJeN-" data-callback="onVerify" data-theme="dark" data-size="normal"></div>
             <div class="verify-status" id="verifyStatus">等待验证…</div>
+            <a href="home.html" class="skip-link" id="skipLink">无法通过验证？点击跳转</a>
         </div>
     </div>
 
     <script>
+        var verified = false;
+
         function onVerify(token) {
+            verified = true;
             var statusEl = document.getElementById('verifyStatus');
             statusEl.textContent = '✅ 验证通过，正在跳转…';
             statusEl.className = 'verify-status passed';
@@ -121,6 +141,12 @@
                 window.location.href = 'home.html';
             }, 600);
         }
+
+        setTimeout(function() {
+            if (!verified) {
+                document.getElementById('skipLink').style.display = 'inline-block';
+            }
+        }, 2000);
     </script>
 </body>
 </html>
