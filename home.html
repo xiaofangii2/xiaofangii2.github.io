@@ -21,7 +21,7 @@
         .site-bg {
             width: 100%;
             min-height: 100vh;
-            background: url('background.jpg') no-repeat center center / cover;
+            background: url('assets/background.jpg') no-repeat center center / cover;
             background-attachment: fixed;
             position: relative;
         }
@@ -37,10 +37,12 @@
         .header {
             position: relative;
             z-index: 10;
-            padding: 24px 30px;
+            padding: 24px 30px 10px;
             background: transparent;
             display: flex;
             justify-content: center;
+            flex-direction: column;
+            align-items: center;
         }
 
         .site-title {
@@ -59,7 +61,7 @@
             position: relative;
             z-index: 1;
             padding-top: 10px;
-            min-height: 60vh;
+            min-height: 50vh;
             display: flex;
             flex-direction: column;
             align-items: center;
