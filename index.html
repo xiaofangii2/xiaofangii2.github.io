@@ -120,7 +120,7 @@
 <body>
     <div class="bg">
         <div class="verify-box">
-            <div class="verify-title"> 人机验证</div>
+            <div class="verify-title">人机验证</div>
             <div class="verify-sub">请完成下方验证以进入小方小镇官网</div>
             <div class="cf-turnstile" data-sitekey="0x4AAAAAAEHAYONhdqABJeN-" data-callback="onVerify" data-theme="dark" data-size="normal"></div>
             <div class="verify-status" id="verifyStatus">等待验证…</div>
@@ -132,14 +132,40 @@
         var verified = false;
 
         function onVerify(token) {
-            verified = true;
             var statusEl = document.getElementById('verifyStatus');
-            statusEl.textContent = '✅ 验证通过，正在跳转…';
-            statusEl.className = 'verify-status passed';
+            statusEl.textContent = '⏳ 验证中…';
+            statusEl.className = 'verify-status';
 
-            setTimeout(function() {
-                window.location.href = 'home.html';
-            }, 600);
+            var workerUrl = 'https://turnstile-verify.3805707114.workers.dev/';
+
+            fetch(workerUrl, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ token: token })
+            })
+            .then(function(res) {
+                return res.json();
+            })
+            .then(function(data) {
+                if (data.success) {
+                    verified = true;
+                    statusEl.textContent = '✅ 验证通过，正在跳转…';
+                    statusEl.className = 'verify-status passed';
+                    setTimeout(function() {
+                        window.location.href = 'home.html';
+                    }, 600);
+                } else {
+                    statusEl.textContent = '❌ 验证失败，请重试';
+                    statusEl.className = 'verify-status';
+                    turnstile.reset();
+                }
+            })
+            .catch(function() {
+                statusEl.textContent = '❌ 网络错误，请刷新重试';
+                statusEl.className = 'verify-status';
+            });
         }
 
         setTimeout(function() {
